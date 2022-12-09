@@ -1,10 +1,12 @@
-//using System.Collections.Generic;
+using System.Collections.Generic;
 using System;
 
 namespace PierresBakery.Models
 {
   public class Bakery
   {
+  //  Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]() {}
+
     public string Order(int breadCount, int pastryCount)
     {
       if (breadCount > 0)

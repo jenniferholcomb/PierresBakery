@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierresBakery.Models;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace PierresBakery.Test
 {
@@ -83,6 +83,7 @@ namespace PierresBakery.Test
       Assert.AreEqual(order, result);
     }
 
+    [TestMethod]
     public void Order_CreatesNewBreadClass_String()
     {
       //Arrange
@@ -98,6 +99,7 @@ namespace PierresBakery.Test
       Assert.AreEqual(orderTotal, result);
     }
 
+    [TestMethod]
     public void Order_CreatesNewBakeryClass_String()
     {
       //Arrange
@@ -113,6 +115,7 @@ namespace PierresBakery.Test
       Assert.AreEqual(orderTotal, result);
     }
 
+    [TestMethod]
     public void PrintOrder_ReturnsBreadPastryTotalToUser_String()
     {
       //Arrange
@@ -126,6 +129,25 @@ namespace PierresBakery.Test
 
       //Assert
       Assert.AreEqual(orderTotal, result);
+    }
+
+    [TestMethod]
+    public void Order_AddsOrderToDictionary_True()
+    {
+      //Arrange
+      int breadTotal = 15;
+      int pastryTotal = 7;
+      Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
+        {"bread", new int[]{3, 15}},
+        {"pastries", new int[]{4, 7}}
+      };
+      Bakery newBakery = new Bakery();
+
+      //Act
+      newBakery.Order(breadTotal, pastryTotal);
+
+      //Assert
+      Assert.AreEqual(bakeryOrder, newBakery.bakeryOrder);
     }
   }
 }
