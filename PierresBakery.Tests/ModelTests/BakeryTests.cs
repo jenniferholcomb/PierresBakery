@@ -38,7 +38,7 @@ namespace PierresBakery.Test
     }
 
     [TestMethod]
-    public void OrderFilter_IdentifiesIfBreadPastryBoth_String()
+    public void Order_IdentifiesIfBreadPastryBoth_String()
     {
       //Arrange
       int breadCount = 2;
@@ -47,10 +47,26 @@ namespace PierresBakery.Test
       string order = "bread";
 
       //Act
-      string result = newBakery.OrderFilter(breadCount, pastryCount);
+      string result = newBakery.Order(breadCount, pastryCount);
 
       //Assert
       Assert.AreEqual(order, result);
+    }
+
+    public void Order_CreatesNewBreadClass_String()
+    {
+      //Arrange
+      int breadCount = 2;
+      int pastryCount = 0;
+      Bakery newBakery = new Bakery();
+      string orderTotal = "$10";
+
+      //Act
+      string result = newBakery.Order(breadCount, pastryCount);
+
+      //Assert
+      Assert.AreEqual(orderTotal, result);
+
     }
   }
 }
