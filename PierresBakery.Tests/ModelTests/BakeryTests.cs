@@ -37,19 +37,20 @@ namespace PierresBakery.Test
       Assert.AreEqual(typeof(Bakery), newBakery.GetType());
     }
 
-    // [TestMethod]
-    // public void OrderFilter_IdentifiesIfBreadPastryBoth_String()
-    // {
-    //   //Arrange
-    //   int breadCount = 2;
-    //   int pastryCount = 0;
-    //   string order = "bread";
+    [TestMethod]
+    public void OrderFilter_IdentifiesIfBreadPastryBoth_String()
+    {
+      //Arrange
+      Bakery newBakery = new Bakery();
+      int breadCount = 2;
+      int pastryCount = 0;
+      string order = "bread";
 
-    //   //Act
-    //   string result = OrderFilter(BreadCount, PastryCount
+      //Act
+      string result = OrderFilter(breadCount, pastryCount);
 
-    //   //Assert
-    //   Assert.AreEqual(order, result);
-    // }
+      //Assert
+      Assert.AreEqual(order, result);
+    }
   }
 }
