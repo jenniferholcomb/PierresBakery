@@ -1,7 +1,15 @@
 //using System.Collections.Generic;
 
-namespace Bakery.Models
+namespace PierresBakery.Models
 {
+  public class Bakery
+  {
+      // public string OrderFilter(int breadCount, int pastryCount)
+      // {
+
+      // }
+  }
+  }
   public class Bread
   {
     
@@ -11,4 +19,4 @@ namespace Bakery.Models
   {
 
   }
-}
+

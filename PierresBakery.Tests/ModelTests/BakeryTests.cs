@@ -1,8 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Bakery.Models;
+using PierresBakery.Models;
 //using System.Collections.Generic;
 
-namespace Bakery.Test
+namespace PierresBakery.Test
 {
   [TestClass]
   public class BakeryTests
@@ -18,7 +18,7 @@ namespace Bakery.Test
     }
 
     [TestMethod]
-    public void PastryClass_CreateInstancesOfPastry_Pastry()
+    public void PastryClass_CreateInstanceOfPastry_Pastry()
     {
       //Act
       Pastry newPastry = new Pastry();
@@ -26,5 +26,30 @@ namespace Bakery.Test
       //Assert
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
+
+    [TestMethod]
+    public void BakeryClass_CreateInstanceOfBakery_Bakery()
+    {
+      //Act
+      Bakery newBakery = new Bakery();
+
+      //Assert
+      Assert.AreEqual(typeof(Bakery), newBakery.GetType());
+    }
+
+    // [TestMethod]
+    // public void OrderFilter_IdentifiesIfBreadPastryBoth_String()
+    // {
+    //   //Arrange
+    //   int breadCount = 2;
+    //   int pastryCount = 0;
+    //   string order = "bread";
+
+    //   //Act
+    //   string result = OrderFilter(BreadCount, PastryCount
+
+    //   //Assert
+    //   Assert.AreEqual(order, result);
+    // }
   }
 }
