@@ -96,7 +96,6 @@ namespace PierresBakery.Test
 
       //Assert
       Assert.AreEqual(orderTotal, result);
-
     }
 
     public void Order_CreatesNewBakeryClass_String()
@@ -112,8 +111,18 @@ namespace PierresBakery.Test
 
       //Assert
       Assert.AreEqual(orderTotal, result);
-
     }
+
+    // public void Order_CalculatesTotalOrder_Int()
+    // {
+    //   //Arrange
+
+
+    //   //Act
+
+    //   //Assert
+    //   Assert.True(viewModel.IsDeposit);
+    // }
 
     // public void PrintOrder_ReturnsBreadPastryTotalToUser_String()
     // {
