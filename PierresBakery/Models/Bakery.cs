@@ -37,20 +37,19 @@ namespace PierresBakery.Models
       _breadOrder = breadOrder;
     }
 
-    private int CalculateTotal()
+    public int CalculateTotal()
     {
-      int total;
-      int two = 2;
-      int one = 1;
-      for (int i=1; i < _breadOrder; i++)
+      int total = 0;
+
+      for (int i=1; i <= _breadOrder; i++)
       {
         if (i%3 != 0)   //(i==1 || i==2 || (i%3 != 0))
         {
-          total + two;
+          total = total + 2;
         }
         else
         {
-          total + one;
+          total = total + 1;
         }
       }
       return total;
