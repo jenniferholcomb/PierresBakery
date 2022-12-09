@@ -19,17 +19,26 @@ namespace PierresBakery.Models
         int pastryTotal = pastryOrder.CalculateTotal();
         return "$" + pastryTotal.ToString();
       }
-      // else
-      // {
-      //   return "no order";
-      // }
-      return "no order";
 
+      return "no order";
     }
 
     public string PrintOrder(int breadTotal, int pastryTotal)
     {
-
+      string receipt;
+      if(breadTotal != 0 && pastryTotal != 0)
+      {
+        receipt = $"loaves of bread is ${breadTotal} and pastries is ${pastryTotal} ";
+      }
+      else if(breadTotal != 0)
+      {
+        receipt = $"loaves of bread is ${breadTotal} ";
+      }
+      else
+      {
+        receipt = $"pastries is ${pastryTotal} ";
+      }
+      return $"Your order for {receipt}.";
     }
   }
 

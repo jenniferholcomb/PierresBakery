@@ -119,7 +119,7 @@ namespace PierresBakery.Test
       int breadTotal = 15;
       int pastryTotal = 7;
       Bakery newBakery = new Bakery();
-      string orderTotal = "Your order total for 4 loaves of bread and 5 pastries is $22.";
+      string orderTotal = "Your order total for loaves of bread and pastries is $22.";
 
       //Act
       string result = newBakery.PrintOrder(breadTotal, pastryTotal);
