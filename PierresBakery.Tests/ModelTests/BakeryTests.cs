@@ -18,6 +18,21 @@ namespace PierresBakery.Test
     }
 
     [TestMethod]
+    public void CalculateTotal_CalculatesTotalBreadOrder_Int()
+    {
+      //Arrange
+      int breadCount = 4;
+      int orderTotal = 7;
+
+      //Act
+      //Bread newBread = new Bread(breadCount);
+      int result = newBread.CalculateTotal();
+
+      //Assert
+      Assert.AreEqual(orderTotal, result)
+    }
+
+    [TestMethod]
     public void PastryClass_CreateInstanceOfPastry_Pastry()
     {
       //Act
@@ -43,7 +58,7 @@ namespace PierresBakery.Test
       //Arrange
       int breadCount = 2;
       int pastryCount = 0;
-      Bakery newBakery = new Bakery();
+      //Bakery newBakery = new Bakery();
       string order = "$10";
 
       //Act
@@ -58,7 +73,7 @@ namespace PierresBakery.Test
       //Arrange
       int breadCount = 2;
       int pastryCount = 0;
-      Bakery newBakery = new Bakery();
+      //Bakery newBakery = new Bakery();
       string orderTotal = "$10";
 
       //Act
@@ -74,7 +89,7 @@ namespace PierresBakery.Test
       //Arrange
       int breadCount = 0;
       int pastryCount = 1;
-      Bakery newBakery = new Bakery();
+      //Bakery newBakery = new Bakery();
       string orderTotal = "$2";
 
       //Act
