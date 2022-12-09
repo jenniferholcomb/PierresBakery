@@ -41,13 +41,13 @@ namespace PierresBakery.Test
     public void OrderFilter_IdentifiesIfBreadPastryBoth_String()
     {
       //Arrange
-      Bakery newBakery = new Bakery();
       int breadCount = 2;
       int pastryCount = 0;
+      Bakery newBakery = new Bakery();
       string order = "bread";
 
       //Act
-      string result = OrderFilter(breadCount, pastryCount);
+      string result = newBakery.OrderFilter(breadCount, pastryCount);
 
       //Assert
       Assert.AreEqual(order, result);
