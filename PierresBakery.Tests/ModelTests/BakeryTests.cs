@@ -113,30 +113,19 @@ namespace PierresBakery.Test
       Assert.AreEqual(orderTotal, result);
     }
 
-    // public void Order_CalculatesTotalOrder_Int()
-    // {
-    //   //Arrange
+    public void PrintOrder_ReturnsBreadPastryTotalToUser_String()
+    {
+      //Arrange
+      int breadTotal = 15;
+      int pastryTotal = 7;
+      Bakery newBakery = new Bakery();
+      string orderTotal = "Your order total for 4 loaves of bread and 5 pastries is $22.";
 
+      //Act
+      string result = newBakery.PrintOrder(breadTotal, pastryTotal);
 
-    //   //Act
-
-    //   //Assert
-    //   Assert.True(viewModel.IsDeposit);
-    // }
-
-    // public void PrintOrder_ReturnsBreadPastryTotalToUser_String()
-    // {
-    //   //Arrange
-    //   int breadCount = 4;
-    //   int pastryCount = 5;
-    //   Bakery newBakery = new Bakery();
-    //   string orderTotal = "Your order total for 4 loaves of bread and 5 pastries is $22.";
-
-    //   //Act
-    //   string result = newBakery.Order(breadCount, pastryCount);
-
-    //   //Assert
-    //   Assert.AreEqual(orderTotal, result);
-    // }
+      //Assert
+      Assert.AreEqual(orderTotal, result);
+    }
   }
 }

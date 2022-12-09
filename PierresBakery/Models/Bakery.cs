@@ -19,23 +19,24 @@ namespace PierresBakery.Models
         int pastryTotal = pastryOrder.CalculateTotal();
         return "$" + pastryTotal.ToString();
       }
-      else
-      {
-        return "no order";
-      }
+      // else
+      // {
+      //   return "no order";
+      // }
+      return "no order";
 
     }
 
-    // public string PrintOrder()
-    // {
+    public string PrintOrder(int breadTotal, int pastryTotal)
+    {
 
-    // }
+    }
   }
 
 
   public class Bread
   {
-    private int _breadOrder { get; }
+    public int _breadOrder { get; }
 
     public Bread(int breadOrder)
     {
@@ -60,7 +61,7 @@ namespace PierresBakery.Models
 
   public class Pastry
   {
-    private int _pastryOrder { get; }
+    public int _pastryOrder { get; }
 
     public Pastry(int pastryOrder)
     {
