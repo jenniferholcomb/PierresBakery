@@ -18,7 +18,8 @@ namespace PierresBakery.Models
         }
         else if (pastryCount > 0 && breadCount == 0)
         {
-          return "pastry";
+          Pastry pastryOrder = new Pastry(pastryCount);
+          return "$2";
         } else
         {
           return "no order";
@@ -29,17 +30,42 @@ namespace PierresBakery.Models
 
   public class Bread
   {
-    public int BreadOrder { get; }
+    private int _breadOrder { get; }
 
     public Bread(int breadOrder)
     {
-      BreadOrder = breadOrder;
+      _breadOrder = breadOrder;
     }
+
+    private int CalculateTotal()
+    {
+      int total;
+      int two = 2;
+      int one = 1;
+      for (int i=1; i < _breadOrder; i++)
+      {
+        if (i%3 != 0)   //(i==1 || i==2 || (i%3 != 0))
+        {
+          total + two;
+        }
+        else
+        {
+          total + one;
+        }
+      }
+      return total;
+    }
+
   }
 
   public class Pastry
   {
+    private int PastryOrder { get; }
 
+    public Pastry(int pastryOrder)
+    {
+      PastryOrder = pastryOrder;
+    }
   }
 }
 
