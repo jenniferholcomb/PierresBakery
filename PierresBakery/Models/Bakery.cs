@@ -5,7 +5,7 @@ namespace PierresBakery.Models
 {
   public class Bakery
   {
-  //  Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]() {}
+   public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {};
 
     public string Order(int breadCount, int pastryCount)
     {
@@ -13,12 +13,14 @@ namespace PierresBakery.Models
       {
         Bread breadOrder = new Bread(breadCount);
         int breadTotal = breadOrder.CalculateTotal();
+   //     bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
         return "$" + breadTotal.ToString();
       } 
       if (pastryCount > 0)
       {
         Pastry pastryOrder = new Pastry(pastryCount);
         int pastryTotal = pastryOrder.CalculateTotal();
+   //     bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
         return "$" + pastryTotal.ToString();
       }
 
@@ -30,17 +32,17 @@ namespace PierresBakery.Models
       string receipt;
       if(breadTotal != 0 && pastryTotal != 0)
       {
-        receipt = $"loaves of bread is ${breadTotal} and pastries is ${pastryTotal} ";
+        receipt = $"loaves of bread is ${breadTotal}, and pastries is ${pastryTotal}";
       }
       else if(breadTotal != 0)
       {
-        receipt = $"loaves of bread is ${breadTotal} ";
+        receipt = $"loaves of bread is ${breadTotal}";
       }
       else
       {
-        receipt = $"pastries is ${pastryTotal} ";
+        receipt = $"pastries is ${pastryTotal}. ";
       }
-      return $"Your order for {receipt}.";
+      return $"Your order total for {receipt}. You owe ${breadTotal + pastryTotal}.";
     }
   }
 
