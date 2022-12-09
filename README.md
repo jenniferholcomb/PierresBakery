@@ -32,8 +32,7 @@ This application gives a command line prompt asking user if they'd like to purch
 * A method that takes users order, determines if user wants bread, pastry, or both
 * A method that calculates cost of how many loaves
 * A method that calculates cost of how many pastry
-* A method that discounts bread
-* A method that discounts pastry
+
 * Return total cost of order to user
 
 ## Known Bugs

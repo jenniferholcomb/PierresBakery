@@ -5,28 +5,49 @@ namespace PierresBakery.Models
 {
   public class Bakery
   {
-      public string Order(int breadCount, int pastryCount)
-      {
-        if (breadCount > 0 && pastryCount > 0)
-        {
-          return "both";
-        }
-        else if (breadCount > 0 && pastryCount == 0)
-        {
-          Bread breadOrder = new Bread(breadCount);
-          return "$10";
-        }
-        else if (pastryCount > 0 && breadCount == 0)
-        {
-          Pastry pastryOrder = new Pastry(pastryCount);
-          return "$2";
-        } else
-        {
-          return "no order";
-        }
+    public string Order(int breadCount, int pastryCount)
+    {
+      // if (breadCount > 0 && pastryCount > 0)
+      // {
+      //   return "both";
+      // }
+      // else if (breadCount > 0 && pastryCount == 0)
+      // {
+      //   Bread breadOrder = new Bread(breadCount);
+      //   return "$10";
+      // }
+      // else if (pastryCount > 0 && breadCount == 0)
+      // {
+      //   Pastry pastryOrder = new Pastry(pastryCount);
+      //   return "$2";
+      // } else
+      // {
+      //   return "no order";
+      // }
 
+      if (breadCount > 0)
+      {
+        Bread breadOrder = new Bread(breadCount);
+        return "$10";
+      } 
+      if (pastryCount > 0)
+      {
+        Pastry pastryOrder = new Pastry(pastryCount);
+        return "$2";
       }
+      else
+      {
+        return "no order";
+      }
+
+    }
+
+    // public string PrintOrder()
+    // {
+
+    // }
   }
+
 
   public class Bread
   {
