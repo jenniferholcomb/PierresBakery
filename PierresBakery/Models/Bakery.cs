@@ -5,7 +5,7 @@ namespace PierresBakery.Models
 {
   public class Bakery
   {
-      public string OrderFilter(int breadCount, int pastryCount)
+      public string Order(int breadCount, int pastryCount)
       {
         if (breadCount > 0 && pastryCount > 0)
         {
@@ -13,7 +13,8 @@ namespace PierresBakery.Models
         }
         else if (breadCount > 0 && pastryCount == 0)
         {
-          return "bread";
+          Bread breadOrder = new Bread(breadCount);
+          return "$10";
         }
         else if (pastryCount > 0 && breadCount == 0)
         {
@@ -28,7 +29,12 @@ namespace PierresBakery.Models
 
   public class Bread
   {
-    
+    public int BreadOrder { get; }
+
+    public Bread(int breadOrder)
+    {
+      BreadOrder = breadOrder;
+    }
   }
 
   public class Pastry

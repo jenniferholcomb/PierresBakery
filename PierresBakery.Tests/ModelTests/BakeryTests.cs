@@ -11,7 +11,7 @@ namespace PierresBakery.Test
     public void BreadClass_CreateInstanceOfBread_Bread()
     {
       //Act
-      Bread newBread = new Bread();
+      Bread newBread = new Bread(2);
 
       //Assert
       Assert.AreEqual(typeof(Bread), newBread.GetType());
@@ -44,7 +44,7 @@ namespace PierresBakery.Test
       int breadCount = 2;
       int pastryCount = 0;
       Bakery newBakery = new Bakery();
-      string order = "bread";
+      string order = "$10";
 
       //Act
       string result = newBakery.Order(breadCount, pastryCount);
