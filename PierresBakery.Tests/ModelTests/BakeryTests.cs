@@ -17,20 +17,20 @@ namespace PierresBakery.Test
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
 
-    [TestMethod]
-    public void CalculateTotal_CalculatesTotalBreadOrder_Int()
-    {
-      //Arrange
-      int breadCount = 4;
-      int orderTotal = 7;
+    // [TestMethod]
+    // public void CalculateTotal_CalculatesTotalBreadOrder_Int()
+    // {
+    //   //Arrange
+    //   // int breadCount = 4;
+    //   // int orderTotal = 7;
 
-      //Act
-      Bread newBread = new Bread(breadCount);
-      int result = newBread.CalculateTotal();
+    //   // //Act
+    //   // Bread newBread = new Bread(breadCount);
+    //   // int result = newBread.CalculateTotal();
 
-      //Assert
-      Assert.AreEqual(orderTotal, result);
-    }
+    //   // //Assert
+    //   // Assert.AreEqual(orderTotal, result);
+    // }
 
     [TestMethod]
     public void PastryClass_CreateInstanceOfPastry_Pastry()
@@ -40,6 +40,21 @@ namespace PierresBakery.Test
 
       //Assert
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+    }
+
+    [TestMethod]
+    public void CalculateTotal_CalculatesTotalPastryOrder_Int()
+    {
+      //Arrange
+      int pastryCount = 4;
+      int orderTotal = 7;
+
+      //Act
+      Pastry newPastry = new Pastry(pastryCount);
+      int result = newPastry.CalculateTotal();
+
+      //Assert
+      Assert.AreEqual(orderTotal, result);
     }
 
     [TestMethod]

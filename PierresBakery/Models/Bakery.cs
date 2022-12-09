@@ -37,11 +37,30 @@ namespace PierresBakery.Models
       _breadOrder = breadOrder;
     }
 
+    // public int CalculateTotal()
+    // {
+    //   int total = 0;
+
+
+    //   return total;
+    // }
+
+  }
+
+  public class Pastry
+  {
+    private int _pastryOrder { get; }
+
+    public Pastry(int pastryOrder)
+    {
+      _pastryOrder = pastryOrder;
+    }
+
     public int CalculateTotal()
     {
       int total = 0;
 
-      for (int i=1; i <= _breadOrder; i++)
+      for (int i=1; i <= _pastryOrder; i++)
       {
         if (i%3 != 0)   //(i==1 || i==2 || (i%3 != 0))
         {
@@ -54,17 +73,7 @@ namespace PierresBakery.Models
       }
       return total;
     }
-
-  }
-
-  public class Pastry
-  {
-    private int PastryOrder { get; }
-
-    public Pastry(int pastryOrder)
-    {
-      PastryOrder = pastryOrder;
-    }
   }
 }
+
 
