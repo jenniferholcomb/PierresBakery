@@ -21,7 +21,7 @@ namespace PierresBakery.Test
     public void PastryClass_CreateInstanceOfPastry_Pastry()
     {
       //Act
-      Pastry newPastry = new Pastry();
+      Pastry newPastry = new Pastry(1);
 
       //Assert
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
@@ -60,6 +60,22 @@ namespace PierresBakery.Test
       int pastryCount = 0;
       Bakery newBakery = new Bakery();
       string orderTotal = "$10";
+
+      //Act
+      string result = newBakery.Order(breadCount, pastryCount);
+
+      //Assert
+      Assert.AreEqual(orderTotal, result);
+
+    }
+
+    public void Order_CreatesNewBakeryClass_String()
+    {
+      //Arrange
+      int breadCount = 0;
+      int pastryCount = 1;
+      Bakery newBakery = new Bakery();
+      string orderTotal = "$2";
 
       //Act
       string result = newBakery.Order(breadCount, pastryCount);
