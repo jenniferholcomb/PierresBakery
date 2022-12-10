@@ -13,14 +13,14 @@ namespace PierresBakery.Models
       {
         Bread breadOrder = new Bread(breadCount);
         int breadTotal = breadOrder.CalculateTotal();
-   //     bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
+        bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
         return "$" + breadTotal.ToString();
       } 
       if (pastryCount > 0)
       {
         Pastry pastryOrder = new Pastry(pastryCount);
         int pastryTotal = pastryOrder.CalculateTotal();
-   //     bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
+        bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
         return "$" + pastryTotal.ToString();
       }
 
