@@ -5,25 +5,35 @@ namespace PierresBakery.Models
 {
   public class Bakery
   {
-   public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {};
+  //  public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
+  //       {"bread", new int[2]{4, 15}},
+  //       {"pastries", new int[2]{4, 7}}
+  //  };
+
+        public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
+        {"bread", new int[2]{4, 15}},
+        {"pastries", new int[2]{4, 7}}
+      };
 
     public string Order(int breadCount, int pastryCount)
     {
+      // bakeryOrder.Add("bread", new int[2]{4, 15});
+      // bakeryOrder.Add("pastries", new int[2]{4, 7});
+
       if (breadCount > 0)
       {
         Bread breadOrder = new Bread(breadCount);
         int breadTotal = breadOrder.CalculateTotal();
-        bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
+        //bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
         return "$" + breadTotal.ToString();
       } 
       if (pastryCount > 0)
       {
         Pastry pastryOrder = new Pastry(pastryCount);
         int pastryTotal = pastryOrder.CalculateTotal();
-        bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
+        //bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
         return "$" + pastryTotal.ToString();
       }
-      Console.WriteLine(bakeryOrder["pastries"]);
       return "no order";
     }
 

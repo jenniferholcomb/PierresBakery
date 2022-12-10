@@ -146,6 +146,13 @@ namespace PierresBakery.Test
       CollectionAssert.AreEqual(bakeryOrder, result);
     }
 
+    // [TestMethod]
+    // publicVoid GetDictionary_ReturnsDictionary_Dictionary()
+    // {
+    //   //Arrange
+      
+    // }
+
     [TestMethod]
     public void Order_AddsOrderToDictionary_True()
     {
@@ -153,8 +160,8 @@ namespace PierresBakery.Test
       int breadCount = 4;
       int pastryCount = 4;
       Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
-        {"bread", new int[2]{4, 15}},
-        {"pastries", new int[2]{4, 7}}
+        {"bread", new int[2]{breadCount, 15}},
+        {"pastries", new int[2]{pastryCount, 7}}
       };
       Bakery newBakery = new Bakery();
 
@@ -164,8 +171,8 @@ namespace PierresBakery.Test
       // Console.WriteLine(bakeryOrder);
       int[] test = result["bread"];
       int[] test2 = result["pastries"];
-      Console.WriteLine(test[1]);
-      Console.WriteLine(test2[1]);
+      Console.WriteLine(test[0]);
+      Console.WriteLine(test2[0]);
 
       //Assert
       CollectionAssert.AreEqual(bakeryOrder, result);
