@@ -153,22 +153,27 @@ namespace PierresBakery.Test
       int breadCount = 4;
       int pastryCount = 4;
       Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
-        {"bread", new int[]{4, 15}},
-        {"pastries", new int[]{4, 7}}
+        {"bread", new int[2]{4, 15}},
+        {"pastries", new int[2]{4, 7}}
       };
       Bakery newBakery = new Bakery();
 
       //Act
       newBakery.Order(breadCount, pastryCount);
       Dictionary<string, int[]> result = newBakery.bakeryOrder;
-      Console.WriteLine(bakeryOrder);
+      // Console.WriteLine(bakeryOrder);
       int[] test = result["bread"];
       int[] test2 = result["pastries"];
-      Console.WriteLine(typeof(test));
-      Console.WriteLine(typeof(test2));
+      Console.WriteLine(test[1]);
+      Console.WriteLine(test2[1]);
 
       //Assert
       CollectionAssert.AreEqual(bakeryOrder, result);
     }
   }
 }
+// > bakeryOrder["bread"]
+// int[2] { 4, 15 }
+// > int[] test = bakeryOrder["bread"];
+// > test[1]
+// 15

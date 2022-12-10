@@ -23,7 +23,7 @@ namespace PierresBakery.Models
         bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
         return "$" + pastryTotal.ToString();
       }
-
+      Console.WriteLine(bakeryOrder["pastries"]);
       return "no order";
     }
 
