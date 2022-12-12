@@ -5,54 +5,49 @@ namespace PierresBakery.Models
 {
   public class Bakery
   {
-  //  public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
-  //       {"bread", new int[2]{4, 15}},
-  //       {"pastries", new int[2]{4, 7}}
-  //  };
+    public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {};
 
-        public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
-        {"bread", new int[2]{4, 15}},
-        {"pastries", new int[2]{4, 7}}
-      };
-
-    public string Order(int breadCount, int pastryCount)
+    public void Order(int breadCount, int pastryCount)
     {
-      // bakeryOrder.Add("bread", new int[2]{4, 15});
-      // bakeryOrder.Add("pastries", new int[2]{4, 7});
-
       if (breadCount > 0)
       {
         Bread breadOrder = new Bread(breadCount);
         int breadTotal = breadOrder.CalculateTotal();
-        //bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
-        return "$" + breadTotal.ToString();
+        bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
       } 
       if (pastryCount > 0)
       {
         Pastry pastryOrder = new Pastry(pastryCount);
         int pastryTotal = pastryOrder.CalculateTotal();
-        //bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
-        return "$" + pastryTotal.ToString();
+        bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
       }
-      return "no order";
+
+      // "no order";
     }
 
-    public string PrintOrder(int breadTotal, int pastryTotal)
+    public string PrintOrder()
     {
+      bool bread = bakeryOrder.ContainsKey("bread");
+      bool pastries = bakeryOrder.ContainsKey("pastries");
       string receipt;
-      if(breadTotal != 0 && pastryTotal != 0)
+      int orderTotal = 0;
+
+      if(bread && pastries)
       {
-        receipt = $"loaves of bread is ${breadTotal}, and pastries is ${pastryTotal}";
+        receipt = $"{bakeryOrder["bread"][0]} loaves of bread is ${bakeryOrder["bread"][1]}, and {bakeryOrder["pastries"][0]} pastries is ${bakeryOrder["pastries"][1]}";
+        orderTotal = (bakeryOrder["bread"][1]) + (bakeryOrder["pastries"][1]);
       }
-      else if(breadTotal != 0)
+      else if(bread)
       {
-        receipt = $"loaves of bread is ${breadTotal}";
+        receipt = $"{bakeryOrder["bread"][0]} loaves of bread is ${bakeryOrder["bread"][1]}";
+        orderTotal = orderTotal + (bakeryOrder["bread"][1]);
       }
       else
       {
-        receipt = $"pastries is ${pastryTotal}. ";
+        receipt = $"{bakeryOrder["pastries"][0]} pastries is ${bakeryOrder["pastries"][1]}";
+        orderTotal = orderTotal + (bakeryOrder["pastries"][1]);
       }
-      return $"Your order total for {receipt}. You owe ${breadTotal + pastryTotal}.";
+      return $"Your order total for {receipt}. You owe ${orderTotal}.";
     }
   }
 
