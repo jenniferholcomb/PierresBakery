@@ -99,7 +99,7 @@ namespace PierresBakery.Test
       Dictionary<string, int[]> result = newBakery.bakeryOrder;
 
       //Assert
-      Assert.AreEqual(bakeryOrder, result);
+      CollectionAssert.AreEqual(bakeryOrder, result);
     }
 
     [TestMethod]
