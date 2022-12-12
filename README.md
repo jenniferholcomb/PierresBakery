@@ -37,7 +37,7 @@ This application gives a command line prompt asking user if they'd like to purch
 
 ## Known Bugs
 
-* _Any known issues_
+* Not all tests are passing. But program runs as expected.
 * If any issues are discovered, please email jenniferlholcomb@gmail.com.
 
 ## License
