@@ -82,25 +82,25 @@ namespace PierresBakery.Test
       CollectionAssert.AreEqual(bakeryOrder, result);
     }
 
-    // [TestMethod]
-    // public void Order_IdentifiesIfBreadPastryBothAddedToDictionary_Dictionary()
-    // {
-    //   //Arrange
-    //   int breadCount = 4;
-    //   int pastryCount = 4;
-    //   Bakery newBakery = new Bakery();
-    //   Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
-    //     {"bread", new int[2]{4, 15}},
-    //     {"pastries", new int[2]{4, 7}}
-    //   };
+    [TestMethod]
+    public void Order_IdentifiesIfBreadPastryBothAddedToDictionary_Dictionary()
+    {
+      //Arrange
+      int breadCount = 4;
+      int pastryCount = 4;
+      Bakery newBakery = new Bakery();
+      Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
+        {"bread", new int[]{4, 15}},
+        {"pastries", new int[]{4, 7}}
+      };
 
-    //   //Act
-    //   newBakery.Order(breadCount, pastryCount);
-    //   Dictionary<string, int[]> result = newBakery.bakeryOrder;
+      //Act
+      newBakery.Order(breadCount, pastryCount);
+      Dictionary<string, int[]> result = newBakery.bakeryOrder;
 
-    //   //Assert
-    //   Assert.AreEqual(bakeryOrder, result);
-    // }
+      //Assert
+      Assert.AreEqual(bakeryOrder, result);
+    }
 
     [TestMethod]
     public void PrintOrder_ReturnsBreadPastryTotalToUser_String()
