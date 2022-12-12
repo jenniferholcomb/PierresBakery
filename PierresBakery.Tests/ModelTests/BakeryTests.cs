@@ -83,64 +83,44 @@ namespace PierresBakery.Test
     }
 
     // [TestMethod]
-    // public void Order_IdentifiesIfBreadPastryBoth_String()
-    // {
-    //   //Arrange
-    //   int breadCount = 2;
-    //   int pastryCount = 3;
-    //   Bakery newBakery = new Bakery();
-
-    //   //Act
-    //   int result = newBakery.Order(breadCount, pastryCount);
-
-    //   //Assert
-    //   Assert.AreEqual(order, result);
-    // }
-
-    // [TestMethod]
-    // public void Order_AddsOrderToDictionary_True()
+    // public void Order_IdentifiesIfBreadPastryBothAddedToDictionary_Dictionary()
     // {
     //   //Arrange
     //   int breadCount = 4;
     //   int pastryCount = 4;
-    //   Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
-    //     {"bread", new int[2]{breadCount, 15}},
-    //     {"pastries", new int[2]{pastryCount, 7}}
-    //   };
-    //   int[] test3 = bakeryOrder["bread"];
     //   Bakery newBakery = new Bakery();
+    //   Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
+    //     {"bread", new int[2]{4, 15}},
+    //     {"pastries", new int[2]{4, 7}}
+    //   };
 
     //   //Act
     //   newBakery.Order(breadCount, pastryCount);
     //   Dictionary<string, int[]> result = newBakery.bakeryOrder;
-    //   // Console.WriteLine(bakeryOrder);
-    //   int[] test = result["bread"];
-    //   int[] test2 = result["pastries"];
-    //   // Console.WriteLine(test[0]);
-    //   // Console.WriteLine(test2[0]);
 
     //   //Assert
-    //   Assert.AreEqual(test3[0], test[0]);
+    //   Assert.AreEqual(bakeryOrder, result);
     // }
 
-    // // [TestMethod]
-    // // public void PrintOrder_ReturnsBreadPastryTotalToUser_String()
-    // // {
-    // //   //Arrange
-    // //   int breadTotal = 15;
-    // //   int pastryTotal = 7;
-    // //   Bakery newBakery = new Bakery();
-    // //   string orderTotal = "Your order total for 4 loaves of bread is $15, and 4 pastries is $7. You owe $22.";
+    [TestMethod]
+    public void PrintOrder_ReturnsBreadPastryTotalToUser_String()
+    {
+      //Arrange
+      int breadTotal = 4;
+      int pastryTotal = 4;
+      Bakery newBakery = new Bakery();
+      string orderTotal = "Your order total for 4 loaves of bread is $15, and 4 pastries is $7. You owe $22.";
 
-    // //   //Act
-    // //   newBakery.Order(breadTotal, pastryTotal);
-    // //   string result = newBakery.PrintOrder();
+      //Act
+      newBakery.Order(breadTotal, pastryTotal);
+      string result = newBakery.PrintOrder();
 
-    // //   //Assert
-    // //   Assert.AreEqual(orderTotal, result);
-    // // }
+      //Assert
+      Assert.AreEqual(orderTotal, result);
+    }
   }
 }
+
     // [TestMethod]
     // public void Order_CreatesNewBreadClass_String()
     // {
@@ -169,4 +149,30 @@ namespace PierresBakery.Test
 
     //   //Assert
     //   Assert.AreEqual(orderTotal, result);
+    // }
+
+    // [TestMethod]
+    // public void Order_AddsOrderToDictionary_True()
+    // {
+    //   //Arrange
+    //   int breadCount = 4;
+    //   int pastryCount = 4;
+    //   Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {
+    //     {"bread", new int[2]{breadCount, 15}},
+    //     {"pastries", new int[2]{pastryCount, 7}}
+    //   };
+    //   int[] test3 = bakeryOrder["bread"];
+    //   Bakery newBakery = new Bakery();
+
+    //   //Act
+    //   newBakery.Order(breadCount, pastryCount);
+    //   Dictionary<string, int[]> result = newBakery.bakeryOrder;
+    //   // Console.WriteLine(bakeryOrder);
+    //   int[] test = result["bread"];
+    //   int[] test2 = result["pastries"];
+    //   // Console.WriteLine(test[0]);
+    //   // Console.WriteLine(test2[0]);
+
+    //   //Assert
+    //   Assert.AreEqual(test3[0], test[0]);
     // }
