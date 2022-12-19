@@ -20,6 +20,23 @@ namespace PierresBakery
       {
         Bakery inputBakery = new Bakery();
         inputBakery.Order(breadInput, pastryInput);
+        Console.WriteLine("Would you like to order any more bread or pastries?");
+        Console.WriteLine("type y for yes, or n for no");
+        string userResponse = Console.ReadLine();
+
+        do
+        {
+          Console.WriteLine("How many more loaves of bread would you like?");
+          int moreBread = int.Parse(Console.ReadLine());
+          Console.WriteLine("How many more pastries would you like?");
+          int morePastries = int.Parse(Console.ReadLine());
+          inputBakery.Order(breadInput, pastryInput);
+          Console.WriteLine("Would you like to order any more bread or pastries?");
+          Console.WriteLine("type y for yes, or n for no");
+          userResponse = Console.ReadLine();
+        }
+        while (userResponse == "y");
+
         string receipt = inputBakery.PrintOrder();
         Console.WriteLine(receipt);
       }

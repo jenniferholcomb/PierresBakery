@@ -5,28 +5,36 @@ namespace PierresBakery.Models
 {
   public class Bakery
   {
-    public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() {};
-
-    public void Order(int breadCount, int pastryCount)
+    public Dictionary<string, int[]> bakeryOrder = new Dictionary<string, int[]>() 
     {
-      if (breadCount > 0)
-      {
-        Bread breadOrder = new Bread(breadCount);
-        int breadTotal = breadOrder.CalculateTotal();
-        bakeryOrder.Add("bread", new int[]{breadCount, breadTotal});
-      } 
-      if (pastryCount > 0)
-      {
-        Pastry pastryOrder = new Pastry(pastryCount);
-        int pastryTotal = pastryOrder.CalculateTotal();
-        bakeryOrder.Add("pastries", new int[]{pastryCount, pastryTotal});
-      }
+      { "bread", new int[2] },
+      { "pastries", new int[2] }
+    };
 
-      // "no order";
+    public void Order(int userBreadCount, int userPastryCount)
+    {
+      if (userBreadCount > 0)
+      {
+        int breadCount = userBreadCount + bakeryOrder["bread"][0];
+        bakeryOrder["bread"][0] = breadCount;
+      } 
+      if (userPastryCount > 0)
+      {
+        int pastryCount = userPastryCount + bakeryOrder["pastries"][0];
+        bakeryOrder["pastries"][0] = pastryCount;
+      }
     }
 
     public string PrintOrder()
     {
+      Bread breadOrder = new Bread(bakeryOrder["bread"][0]);
+      int breadTotal = breadOrder.CalculateTotal() + bakeryOrder["bread"][1];
+      bakeryOrder["bread"][1] = breadTotal;
+
+      Pastry pastryOrder = new Pastry(bakeryOrder["pastries"][0]);
+      int pastryTotal = pastryOrder.CalculateTotal() + bakeryOrder["pastries"][1];
+      bakeryOrder["pastries"][1] = pastryTotal;
+
       bool bread = bakeryOrder.ContainsKey("bread");
       bool pastries = bakeryOrder.ContainsKey("pastries");
       string receipt;
@@ -52,13 +60,18 @@ namespace PierresBakery.Models
   }
 
 
-  public class Bread
+  public class Bread 
   {
     public int _breadOrder { get; }
 
     public Bread(int breadOrder)
     {
       _breadOrder = breadOrder;
+    }
+
+    public void OrderBread(int breadCount)
+    {
+      
     }
 
     public int CalculateTotal()
@@ -74,6 +87,20 @@ namespace PierresBakery.Models
       }
       return total;
     }
+
+    // public int CalculateTotal()
+    // {
+    //   int total = 0;
+
+    //   for (int i=1; i <= _breadOrder; i++)
+    //   {
+    //     if (i%3 != 0)  
+    //     {
+    //       total = total + 5;
+    //     }
+    //   }
+    //   return total;
+    // }
 
   }
 
