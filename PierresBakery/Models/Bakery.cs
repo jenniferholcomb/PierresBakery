@@ -87,21 +87,6 @@ namespace PierresBakery.Models
       }
       return total;
     }
-
-    // public int CalculateTotal()
-    // {
-    //   int total = 0;
-
-    //   for (int i=1; i <= _breadOrder; i++)
-    //   {
-    //     if (i%3 != 0)  
-    //     {
-    //       total = total + 5;
-    //     }
-    //   }
-    //   return total;
-    // }
-
   }
 
   public class Pastry
